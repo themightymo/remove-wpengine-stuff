@@ -34,3 +34,12 @@ function jpry_remove_menu_pages() {
 function jpry_remove_admin_bar_links( $wp_admin_bar ) {
 	$wp_admin_bar->remove_node( 'wpengine_adminbar' );
 }
+
+// Hide this plugin from the plugins list in the dashboard - via http://codex.wordpress.org/Plugin_API/Action_Reference/admin_enqueue_scripts
+function tmm_remove_wpengine_stuff_enqueue_admin_styles($hook) {
+    if( 'plugins.php' != $hook )
+        return;
+    wp_register_style('tmm-remove-wpengine-stuff-enqueue-admin-styles', plugins_url('/admin-style.css', __FILE__));
+    wp_enqueue_style( 'tmm-remove-wpengine-stuff-enqueue-admin-styles' );
+}
+add_action( 'admin_enqueue_scripts', 'tmm_remove_wpengine_stuff_enqueue_admin_styles' );
