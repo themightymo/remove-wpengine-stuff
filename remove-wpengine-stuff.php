@@ -6,7 +6,7 @@
  * Author: The Mighty Mo! Design Co. LLC
  * Author URI: http://www.themightymo.com/
  * License: GPLv2 (or later)
- * Version: 1.2
+ * Version: 1.3
  */
  
 // Remove all evidence of WP Engine from the Dashboard, unless the logged in user is "wpengine" 
